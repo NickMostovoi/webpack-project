@@ -1,17 +1,19 @@
+import * as $ from 'jquery'
+
 function createAnalytics() {
     let counter = 0;
     let isRemoved = false;
 
     const listener = () => {
         counter++;
-        document.querySelector('.counter').innerText = counter;
+        $('.counter').text(counter);
     };
 
-    document.addEventListener('click', listener);
+    $(document).on('click', listener);
 
     return {
         remove() {
-            document.removeEventListener('click', listener);
+            $(document).off('click', listener);
             isRemoved = true;
         },
 
