@@ -5,8 +5,15 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.app {
-    color: blueviolet;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 30px;
+    color: #8a4abe;
     margin-bottom: 20px;
 }
 
@@ -15,4 +22,8 @@ body {
     background-size: cover;
     width: 200px;
     height: 200px;
+}
+
+.counterWrapper {
+    color: #4eb794;
 }
