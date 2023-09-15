@@ -1,0 +1,12 @@
+$border: 1px solid #ccc;
+
+.box {
+    margin-top: 15px;
+    padding: 10px 50px;
+    border: $border;
+
+    h3 {
+        text-align: center;
+        color: #b95c21;
+    }
+}

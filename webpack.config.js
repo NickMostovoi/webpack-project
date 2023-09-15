@@ -25,6 +25,8 @@ const optimization = () => {
     return config;
 }
 
+const fileName = (extension) => isDev ? `[name].${extension}` : `[name].[hash].${extension}`;
+
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
@@ -33,11 +35,11 @@ module.exports = {
         analytics: './analytics.js'
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: fileName('js'),
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js', '.css'],
+        extensions: ['.js'],
         alias: {
             '@models': path.resolve(__dirname, 'src/models')
         }
@@ -56,7 +58,7 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css',
+            filename: fileName('css'),
         })
     ],
     module: {
@@ -64,6 +66,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, 'css-loader']
+            },
+            {
+                test: /\.s[ac]ss$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(jpg|png|gif)$/,
