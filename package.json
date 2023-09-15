@@ -9,6 +9,7 @@
     "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
+  "browserslist": "> 0.25%, not dead",
   "keywords": [
     "webpack",
     "js"
@@ -16,6 +17,10 @@
   "author": "Mykola Mostovoi",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.22.19",
+    "@babel/preset-env": "^7.22.15",
+    "@babel/preset-react": "^7.22.15",
+    "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "^4.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.8.1",
@@ -33,6 +38,8 @@
   },
   "dependencies": {
     "jquery": "^3.7.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

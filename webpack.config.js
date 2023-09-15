@@ -31,7 +31,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: './index.js',
+        main: './index.jsx',
         analytics: './analytics.js'
     },
     output: {
@@ -49,6 +49,7 @@ module.exports = {
         port: 4200,
         hot: isDev
     },
+    devtool: isDev ? 'source-map' : '',
     plugins: [
         new HTMLWebpackPlugin({
             template: "./index.html",
@@ -78,6 +79,26 @@ module.exports = {
             {
                 test: /\.(ttf|woff|woff2|eot)$/,
                 type: 'asset/resource'
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            },
+            {
+                test: /\.jsx$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
+                }
             }
         ]
     }

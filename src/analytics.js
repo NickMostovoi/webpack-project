@@ -1,5 +1,4 @@
 import * as $ from 'jquery'
-import "./styles/styles.css";
 
 function createAnalytics() {
     let counter = 0;
