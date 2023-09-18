@@ -6,7 +6,7 @@ function createAnalytics() {
 
     const listener = () => {
         counter++;
-        $('.counter').text(counter);
+        $('.analytics__counter').text(counter);
     };
 
     $(document).on('click', listener);

@@ -39,9 +39,10 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
-        extensions: ['.js'],
+        extensions: ['.js', '.jsx'],
         alias: {
-            '@models': path.resolve(__dirname, 'src/models')
+            '@components': path.resolve(__dirname, 'src/components'),
+            '@redux': path.resolve(__dirname, 'src/redux'),
         }
     },
     optimization: optimization(),
@@ -49,7 +50,7 @@ module.exports = {
         port: 4200,
         hot: isDev
     },
-    devtool: isDev ? 'source-map' : '',
+    devtool: isDev ? 'source-map' : 'hidden-source-map',
     plugins: [
         new HTMLWebpackPlugin({
             template: "./index.html",

@@ -1,12 +1,37 @@
-$border: 1px solid #ccc;
+$webpackLogo: "../assets/webpack-logo.png";
 
-.box {
-    margin-top: 15px;
-    padding: 10px 50px;
-    border: $border;
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    h3 {
-        text-align: center;
-        color: #b95c21;
+    &__title {
+        font-size: 30px;
+        color: #1c78c0;
+        margin-bottom: 20px;
+    }
+
+    &__logo {
+        background-image: url($webpackLogo);
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+    }
+}
+
+.analytics {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.counter {
+    margin-left: 20px;
+
+    .btn {
+        width: 50px;
+        background-color: #dcd6d6;
+        margin-right: 10px;
+        border-radius: 5px;
     }
 }

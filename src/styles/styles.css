@@ -3,27 +3,5 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.title {
-    font-size: 30px;
-    color: #8a4abe;
-    margin-bottom: 20px;
-}
-
-.logo {
-    background-image: url("../assets/webpack-logo.png");
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-}
-
-.counterWrapper {
-    color: #4eb794;
+    background-color: #cccccc;
 }
